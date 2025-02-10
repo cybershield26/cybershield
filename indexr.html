@@ -1,0 +1,387 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberShield - Seguridad Integral</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos personalizados */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background: #003366;
+            color: #fff;
+            padding: 10px 20px;
+        }
+
+            header .logo img {
+                height: 50px;
+            }
+
+            header .slogan {
+                font-size: 1.2em;
+                margin-left: 10px;
+                font-weight: bold;
+            }
+
+        .navbar-toggler {
+            border: none;
+            color: #fff;
+        }
+
+            .navbar-toggler:focus {
+                box-shadow: none;
+            }
+
+        /* Estilos para el hero con transparencia */
+        .hero {
+            background: url('img/hero.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+            width: 100%; /* Asegura que el hero ocupe el 100% del ancho */
+            box-sizing: border-box; /* Incluye el padding en el ancho total */
+            margin: 0; /* Elimina cualquier margen predeterminado */
+            position: relative; /* Necesario para el overlay */
+        }
+
+            /* Capa superpuesta semi-transparente */
+            .hero::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5); /* Negro con 50% de transparencia */
+                z-index: 1; /* Coloca el overlay por encima de la imagen de fondo */
+            }
+
+        /* Contenido del hero (texto y botón) */
+        .hero-content {
+            position: relative; /* Coloca el contenido por encima del overlay */
+            z-index: 2; /* Asegura que el contenido esté sobre el overlay */
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .hero .btn {
+            background: #ff6600;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .services, .protection, .contact {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+            .services h2, .protection h2, .contact h2 {
+                font-size: 2.5em;
+                margin-bottom: 40px;
+                color: #003366;
+            }
+
+        .service-item, .card, .reason {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+            .service-item i, .card i, .reason i {
+                color: #003366;
+                margin-bottom: 20px;
+            }
+
+            .service-item h3, .card h3 {
+                font-size: 1.8em;
+                margin-bottom: 15px;
+                color: #003366;
+            }
+
+            .service-item p, .card p, .reason p {
+                font-size: 1.1em;
+                color: #555;
+            }
+
+        .protection-cards, .reasons-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+            .contact-item i {
+                color: #003366;
+            }
+
+            .contact-item a {
+                color: #003366;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+        footer {
+            background: #003366;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+            footer .social-media a {
+                color: #fff;
+                margin: 0 10px;
+                text-decoration: none;
+            }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            color: #fff;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            text-align: center;
+            font-size: 24px;
+        }
+
+            .whatsapp-float:hover {
+                background: #128c7e;
+            }
+        /* Sección Nosotros */
+        .about {
+            background: #f4f4f4;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+            .about h2 {
+                font-size: 2.5em;
+                margin-bottom: 20px;
+            }
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <div class="logo d-flex align-items-center">
+                    <img src="img/logo.jpg" alt="CyberShield Logo">
+                    <span class="slogan">CyberShield</span>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#proteccion">Proteccion</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sección Inicio -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Tu seguridad, nuestra prioridad</h1>
+            <p>Protege lo que más importa con soluciones de seguridad avanzadas.</p>
+            <a href="#contacto" class="btn">Contáctanos</a>
+        </div>
+    </section>
+    <!-- Sección Nosotros -->
+    <section id="nosotros" class="about">
+        <h2>Sobre Nosotros</h2>
+        <p>En <b>*CyberShield*</b>, nos dedicamos a ofrecer soluciones de seguridad integrales para hogares y negocios. Con tecnología de vanguardia y un equipo de expertos, garantizamos tu tranquilidad.</p>
+    </section>
+    <!-- Sección Servicios -->
+    <section id="servicios" class="services">
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="service-item">
+                        <i class="fas fa-video fa-3x"></i>
+                        <h3>Cámaras de seguridad</h3>
+                        <ul class="list-unstyled">
+                            <li>Vigila tu propiedad en tiempo real desde cualquier lugar.</li>
+                            <li>Detección de movimiento y alertas instantáneas.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="service-item">
+                        <i class="fas fa-bell fa-3x"></i>
+                        <h3>Alarmas inteligentes</h3>
+                        <ul class="list-unstyled">
+                            <li>Protección 24/7 contra intrusiones.</li>
+                            <li>Integración con tu smartphone para un control total.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="service-item">
+                        <i class="fas fa-fingerprint fa-3x"></i>
+                        <h3>Controles de acceso</h3>
+                        <ul class="list-unstyled">
+                            <li>Tarjetas, huellas dactilares o reconocimiento facial.</li>
+                            <li>Gestiona quién entra y sale de tus instalaciones.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <!-- Redes seguras -->
+                    <div class="service-item">
+                        <i class="fas fa-shield-alt fa-3x"></i> <!-- Ícono de escudo -->
+                        <h3>Redes seguras y optimizadas</h3>
+                        <ul class="list-unstyled">
+                            <li>Protege tus datos con firewalls y cifrado de última generación.</li>
+                            <li>Conexiones rápidas y confiables para tu negocio o hogar.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <!-- Soluciones personalizadas -->
+                    <div class="service-item">
+                        <i class="fas fa-cogs fa-3x"></i> <!-- Ícono de engranajes -->
+                        <h3>Soluciones personalizadas</h3>
+                        <ul class="list-unstyled">
+                            <li>Desde hogares inteligentes hasta grandes empresas, tenemos la solución perfecta para ti.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Cómo te protegemos -->
+    <section id="proteccion" class="protection" style="background: #f4f4f4;">
+        <div class="container">
+            <h2>Ejemplos de cómo CyberShield te protege</h2>
+            <div class="row">
+                <div class="col-md-6 d-flex">
+                    <div class="card text-center p-4 w-100 h-100 shadow">
+                        <i class="fas fa-home fa-3x mb-3"></i>
+                        <h3>Para tu hogar</h3>
+                        <p>Imagina estar de vacaciones y recibir una alerta en tu celular porque tu cámara detectó movimiento en la puerta principal. Con <strong>CyberShield</strong>, puedes verificar en tiempo real y actuar de inmediato.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex">
+                    <div class="card text-center p-4 w-100 h-100 shadow">
+                        <i class="fas fa-building fa-3x mb-3"></i>
+                        <h3>Para tu negocio</h3>
+                        <p>Controla quién accede a tus oficinas con sistemas de reconocimiento facial y asegura tus datos con redes protegidas contra ciberataques.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="why-choose-us mt-5">
+                <h2>¿Por qué elegirnos?</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="reason">
+                            <i class="fas fa-check"></i>
+                            <p>Tecnología de vanguardia.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="reason">
+                            <i class="fas fa-check"></i>
+                            <p>Atención personalizada.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="reason">
+                            <i class="fas fa-check"></i>
+                            <p>Soluciones adaptadas a cada cliente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="contact py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Contáctanos</h2>
+            <div class="d-flex flex-column align-items-center">
+                <div class="contact-item d-flex align-items-center p-3 shadow bg-white rounded w-100 mb-3" style="max-width: 500px;">
+                    <i class="fas fa-envelope fa-3x text-primary me-3"></i>
+                    <div>
+                        <p class="mb-1">Escríbenos a:</p>
+                        <a href="mailto:cybershieldcybershield@gmail.com" class="fw-bold text-dark text-decoration-none">
+                            cybershieldcybershield@gmail.com
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-item d-flex align-items-center p-3 shadow bg-white rounded w-100" style="max-width: 500px;">
+                    <i class="fab fa-whatsapp fa-3x text-success me-3"></i>
+                    <div>
+                        <p class="mb-1">Envíanos un mensaje:</p>
+                        <a href="https://wa.me/5215511314748" target="_blank" class="fw-bold text-dark text-decoration-none">
+                            Escríbenos por WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 CyberShield. Todos los derechos reservados.</p>
+            <div class="social-media">
+                <a href="https://www.facebook.com/profile.php?id=61573096762057" target="_blank">
+                    <i class="fab fa-facebook fa-2x"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/5215511314748" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp fa-2x"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
